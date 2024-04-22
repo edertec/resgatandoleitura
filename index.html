@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livros Resgatados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cadastro de Livros Resgatados</h1>
+
+    <form id="formulario">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required><br><br>
+
+        <label for="autor">Autor:</label>
+        <input type="text" id="autor" name="autor" required><br><br>
+
+        <label for="genero">Gênero:</label>
+        <select id="genero" name="genero" required>
+            <option value="">Selecione</option>
+            <option value="aventura">Aventura</option>
+            <option value="romance">Romance</option>
+            <option value="fantasia">Fantasia</option>
+            <option value="ficcaoCientifica">Ficção Científica</option>
+            <option value="outro">Outro</option>
+        </select><br><br>
+
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado" required>
+            <option value="">Selecione</option>
+            <option value="novo">Novo</option>
+            <option value="usadoBomEstado">Usado - Bom Estado</option>
+            <option value="usadoRegular">Usado - Regular</option>
+            <option value="danificado">Danificado</option>
+        </select><br><br>
+
+        <label for="nomeDoador">Nome do Doador:</label>
+        <input type="text" id="nomeDoador" name="nomeDoador"><br><br>
+
+        <label for="contatoDoador">Contato do Doador:</label>
+        <input type="text" id="contatoDoador" name="contatoDoador"><br><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
