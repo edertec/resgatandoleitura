@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Livros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #555;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consulta de Livros</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Gênero</th>
+                <th>Estado</th>
+                <th>Nome do Doador</th>
+                <th>Contato do Doador</th>
+            </tr>
+        </thead>
+        <tbody id="listaLivros">
+            <!-- Os dados dos livros serão inseridos aqui dinamicamente -->
+        </tbody>
+    </table>
+
+    <script>
+        // Função para buscar os dados no localStorage e exibi-los na tabela
+        function exibirLivros() {
+            const listaLivros = document.getElementById('listaLivros');
+            listaLivros.innerHTML = ''; // Limpa a lista antes de exibir os novos dados
+
+            // Recupera os dados do localStorage
+            const titulo = localStorage.getItem('titulo');
+            const autor = localStorage.getItem('autor');
+            const genero = localStorage.getItem('genero');
+            const estado = localStorage.getItem('estado');
+            const nomeDoador = localStorage.getItem('nomeDoador');
+            const contatoDoador = localStorage.getItem('contatoDoador');
+
+            // Cria uma nova linha na tabela com os dados recuperados
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${titulo}</td>
+                <td>${autor}</td>
+                <td>${genero}</td>
+                <td>${estado}</td>
+                <td>${nomeDoador}</td>
+                <td>${contatoDoador}</td>
+            `;
+            listaLivros.appendChild(newRow);
+        }
+
+        // Chama a função para exibir os livros quando a página é carregada
+        window.onload = exibirLivros;
+    </script>
+</body>
+</html>
